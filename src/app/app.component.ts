@@ -58,12 +58,12 @@ function mostrar(valor: any){
 
 
 //#region Interfaces
-// interface Cliente {
-//   nombre: string,
-//   apellido: string,
-//   cuenta: Cuenta,
-//   movimiento:(valor: number) => void
-// }
+ interface Cliente {
+   nombre: string,
+   apellido: string,
+   cuenta: Cuenta,
+   movimiento:(valor: number) => void
+ }
 
 // interface Cuenta {
 //   agencia: string,
