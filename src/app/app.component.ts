@@ -87,3 +87,6 @@ function mostrar(valor: any){
 // console.table(agente01);
 //#endregion
 
+function hola(){
+  console.log("gola")
+}
