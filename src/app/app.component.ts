@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Producto, Almacen, AgregarAAlmacen, modificarCantProductos, MostrarProductoEnAlmacen, MoverProducto } from './interfaces';
+
+
 
 @Component({
   selector: 'app-root',
@@ -87,6 +90,54 @@ function mostrar(valor: any){
 // console.table(agente01);
 //#endregion
 
-function hola(){
-  console.log("gola")
+let producto1: Producto = {
+  idProducto: 'p0001',
+  nomProducto: 'Shampoo BoB Esponja',
+  precio: 12.5,
+  stock: true,
+  tipoProducto: 'CuidadoPersonal',
+  cantAlmacen: 10,
+  codAlmacen: 'a0001'
+};
+
+let producto2: Producto = {
+  idProducto: 'p0002',
+  nomProducto: 'Shampoo Bunnny',
+  precio: 10.5,
+  stock: true,
+  tipoProducto: 'CuidadoPersonal',
+  cantAlmacen: 12,
+  codAlmacen: 'a0001'
+};
+
+let producto3: Producto = {
+  idProducto: 'p0002',
+  nomProducto: 'Shampoo Bunnny',
+  precio: 10.5,
+  stock: true,
+  tipoProducto: 'CuidadoPersonal',
+  cantAlmacen: 10,
+  codAlmacen: ''
+};
+
+let almacen1: Almacen = {
+  idAlmacen: 'a0001',
+  deposito: [producto1, producto2],
+  numProductos: 2
 }
+
+let almacen2: Almacen = {
+  idAlmacen: 'a0002',
+  deposito: [],
+  numProductos: 0
+}
+
+
+
+//AgregarAAlmacen(producto3, 8, almacen1);
+
+//modificarCantProductos(producto3, 3);
+
+//MostrarProductoEnAlmacen(producto1);
+
+MoverProducto(almacen1, almacen2, producto1)
