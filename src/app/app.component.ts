@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Producto, Almacen, AgregarAAlmacen, modificarCantProductos, MostrarProductoEnAlmacen, MoverProducto } from './interfaces';
+import { Producto, Almacen, MostrarAlmacen, AgregarAAlmacen } from './interfaces';
 
 
 
@@ -90,39 +90,15 @@ function mostrar(valor: any){
 // console.table(agente01);
 //#endregion
 
-let producto1: Producto = {
-  idProducto: 'p0001',
-  nomProducto: 'Shampoo BoB Esponja',
-  precio: 12.5,
-  stock: true,
-  tipoProducto: 'CuidadoPersonal',
-  cantAlmacen: 10,
-  codAlmacen: 'a0001'
-};
+let producto1: Producto = new Producto("p0001","shampoo Boob", 12.3, true, "CuidadoPersonal", 10, "a0001");
+let producto3: Producto = new Producto('p0003','Shampoo Bunnny',10.5,true,'CuidadoPersonal',10,'');
+let producto2: Producto = new Producto('p0002','Shampoo Bunnny',10.5,true,'CuidadoPersonal',12,'a0001')
+  
 
-let producto2: Producto = {
-  idProducto: 'p0002',
-  nomProducto: 'Shampoo Bunnny',
-  precio: 10.5,
-  stock: true,
-  tipoProducto: 'CuidadoPersonal',
-  cantAlmacen: 12,
-  codAlmacen: 'a0001'
-};
-
-let producto3: Producto = {
-  idProducto: 'p0002',
-  nomProducto: 'Shampoo Bunnny',
-  precio: 10.5,
-  stock: true,
-  tipoProducto: 'CuidadoPersonal',
-  cantAlmacen: 10,
-  codAlmacen: ''
-};
 
 let almacen1: Almacen = {
   idAlmacen: 'a0001',
-  deposito: [producto1, producto2],
+  deposito: [producto1.idProducto],
   numProductos: 2
 }
 
@@ -134,10 +110,10 @@ let almacen2: Almacen = {
 
 
 
-//AgregarAAlmacen(producto3, 8, almacen1);
+AgregarAAlmacen(producto3, 8, almacen1);
 
 //modificarCantProductos(producto3, 3);
+producto1.MostrarProducto();
+MostrarAlmacen(almacen1);
 
-//MostrarProductoEnAlmacen(producto1);
-
-MoverProducto(almacen1, almacen2, producto1)
+//MoverProducto(almacen1, almacen2, producto1)
